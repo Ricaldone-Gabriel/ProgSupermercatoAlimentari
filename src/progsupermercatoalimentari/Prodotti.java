@@ -64,13 +64,11 @@ public class Prodotti extends Object{
     
     @Override
     public String toString() {
-        System.out.println("codice a barre prodotto: " 
-                            + codiceBarre);
-        System.out.println("descrizione prodotto: "
-                            + descrizione);
-        System.out.println("prezzo:" 
-                            + prezzo);
-        return "Stampato";
+        String output;
+        output = "codice a barre prodotto: "  + codiceBarre
+                + "\n -descrizione prodotto: " + descrizione
+                + "\n -prezzo:" + prezzo;
+        return output;
     }
     
     public void applicaSconto() {

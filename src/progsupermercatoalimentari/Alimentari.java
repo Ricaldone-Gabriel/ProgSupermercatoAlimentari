@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package progsupermercatoalimentari;
+
+import java.util.GregorianCalendar;
+import java.util.Calendar;
 /*ESERCIZIO 2 (data da non fare)
 Il gestore del negozio vuole fare una distinzione tra i prodotti Alimentari e quelli Non Alimentari. 
 Ai prodotti Alimentari viene infatti associata una data di scadenza (si veda la classe Data),
@@ -15,10 +18,29 @@ Realizzare un metodo toString che permetta la stampa a video delle caratteristic
  * @author gabriel.ricaldone
  */
 public class Alimentari extends Prodotti {
+    GregorianCalendar scadenza;
+    
+    Alimentari(String codiceBarre, String descrizione, float prezzo, GregorianCalendar scadenza) {
+        super(codiceBarre,descrizione,prezzo);
+        this.scadenza = scadenza;
+    }
+    
     public String toString() {
-        super.toString();
-        System.out.println("Data di scadenza: " );
-        return "Stampato";
+        String output;
+        output = super.toString();
+        output += "\n-Data di scadenza: " + scadenza.get(Calendar.YEAR) + "/" +scadenza.get(Calendar.MONTH) + "/" + scadenza.get(Calendar.DAY_OF_MONTH);
+        return output;
+    }
+    
+    @Override
+    public void applicaSconto() {
+        GregorianCalendar DataAttuale = new GregorianCalendar();
+        long diff = DataAttuale.getTimeInMillis() - scadenza.getTimeInMillis();
+        diff = diff / 1000 / 60 / 60 / 24;
+        System.out.println(diff);
+        if(diff > -10 ) {
+           prezzo -= prezzo / 100 * 20; 
+        }
     }
     /* ESERCIZIO 3
     Modificare le due sottoclassi dell'esercizio 2 

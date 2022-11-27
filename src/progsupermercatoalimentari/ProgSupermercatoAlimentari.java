@@ -5,6 +5,8 @@
  */
 package progsupermercatoalimentari;
 
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author gabriel.ricaldone
@@ -34,6 +36,9 @@ public class ProgSupermercatoAlimentari {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Alimentari cibo = new Alimentari("AA","AA",100,new GregorianCalendar(2022,10,30));
+        cibo.applicaSconto();
+        System.out.println(cibo.getPrezzo());
     }
     
 }

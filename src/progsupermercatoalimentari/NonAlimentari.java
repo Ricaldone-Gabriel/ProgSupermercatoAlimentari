@@ -38,9 +38,10 @@ public class NonAlimentari extends Prodotti{
     
     @Override
     public String toString() {
-        super.toString();
-        System.out.println("Materiale principale: " + materialePrincipale);
-        return "Stampato";
+        String output;
+        output = super.toString();
+        output += "\n-Materiale principale: " + materialePrincipale;
+        return output;
     }
     
     @Override
@@ -57,7 +58,5 @@ public class NonAlimentari extends Prodotti{
                     prezzo -= prezzo / 100 * 10;
                 break;
         }
-
-
     }
 }
