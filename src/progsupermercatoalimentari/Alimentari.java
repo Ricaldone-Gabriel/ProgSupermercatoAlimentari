@@ -28,7 +28,7 @@ public class Alimentari extends Prodotti {
     public String toString() {
         String output;
         output = super.toString();
-        output += "\n-Data di scadenza: " + scadenza.get(Calendar.YEAR) + "/" +scadenza.get(Calendar.MONTH) + "/" + scadenza.get(Calendar.DAY_OF_MONTH);
+        output += "\n -Data di scadenza: " + scadenza.get(Calendar.YEAR) + "/" +scadenza.get(Calendar.MONTH) + "/" + scadenza.get(Calendar.DAY_OF_MONTH);
         return output;
     }
     
@@ -42,6 +42,7 @@ public class Alimentari extends Prodotti {
            prezzo -= prezzo / 100 * 20; 
         }
     }
+    
     /* ESERCIZIO 3
     Modificare le due sottoclassi dell'esercizio 2 
     specializzando il metodo applicaSconto in modo che nel caso dei prodotti Alimentari 

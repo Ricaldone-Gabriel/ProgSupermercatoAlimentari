@@ -36,9 +36,23 @@ public class ProgSupermercatoAlimentari {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Alimentari cibo = new Alimentari("AA","AA",100,new GregorianCalendar(2022,10,30));
-        cibo.applicaSconto();
-        System.out.println(cibo.getPrezzo());
+        Alimentari ciboAlimentare1 = new Alimentari("AA","AA",100,new GregorianCalendar(2022,10,30));
+        Alimentari ciboAlimentare2 = new Alimentari("BB","BB",100,new GregorianCalendar(2022,11,30));
+        NonAlimentari nAlimentari = new NonAlimentari("CC","CC",100,"vetro");
+        NonAlimentari nAlimentari1 = new NonAlimentari("DD","DD",100,"vetrone");
+
+        ciboAlimentare1.applicaSconto();
+        System.out.println(ciboAlimentare1.getPrezzo());
+        ciboAlimentare2.applicaSconto();
+        System.out.println(ciboAlimentare2.getPrezzo());
+        nAlimentari.applicaSconto();
+        System.out.println(nAlimentari.getPrezzo());
+        nAlimentari1.applicaSconto();
+        System.out.println(nAlimentari.getPrezzo());
+        System.out.println(ciboAlimentare1.toString());
+        System.out.println(ciboAlimentare2.toString());
+        System.out.println(nAlimentari.toString());
+        System.out.println(nAlimentari1.toString());
     }
     
 }
